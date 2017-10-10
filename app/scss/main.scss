@@ -1,0 +1,275 @@
+@import "bourbon";
+@import "fonts";
+@import "libs";
+@import "vars";
+@import "helpers";
+*::-webkit-input-placeholder {
+    color: #666666;
+    opacity: 1;
+}
+
+*:-moz-placeholder {
+    color: #666666;
+    opacity: 1;
+}
+
+*::-moz-placeholder {
+    color: #666666;
+    opacity: 1;
+}
+
+*:-ms-input-placeholder {
+    color: #666666;
+    opacity: 1;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+    color: #666666;
+}
+
+body input:required:valid,
+body textarea:required:valid {
+    color: #666666;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font-size: 16px;
+    min-width: 320px;
+    position: relative;
+    padding-top: 109px;
+    line-height: 1.65;
+    font-family: $default-font;
+    overflow-x: hidden;
+    color: $dark;
+    display: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+time {
+    font-size: 0.85em;
+    color: $gray;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 1.4em;
+    line-height: 1.35;
+    color: $primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+h4 {
+    margin: 0.75em 0;
+}
+
+header {
+    z-index: 10;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    text-transform: uppercase;
+    color: $primary;
+}
+
+.arrow-back {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    line-height: 1.65;
+    text-align: center;
+    color: $primary;
+    border-radius: 30em;
+    border: 1px solid currentColor;
+    cursor: pointer;
+    z-index: 1;
+}
+
+nav {
+    margin-bottom: -1px;
+    text-transform: uppercase;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    a {
+        display: inline-block;
+        font-size: 13px;
+        padding: 10px;
+        white-space: nowrap;
+        color: $gray;
+        &.current {
+            color: $primary;
+            border-bottom: 2px solid currentColor;
+        }
+        &:hover {
+            color: $primary;
+            text-decoration: none;
+        }
+    }
+}
+
+.card {
+    display: inline-block;
+    border-bottom: 1px solid $gray-lighter;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.card-title {
+    display: inline-block;
+    margin: 0 0 0.5em 0;
+    font-size: 1.6em;
+    cursor: pointer;
+    color: $primary;
+}
+
+.card-header {
+    background-image: url('../img/arr-l.png');
+    background-repeat: no-repeat;
+    background-position: 95% 40%;
+}
+
+.card-preview-text {
+    font-size: 13px;
+    margin-bottom: 1em;
+    font-weight: bold;
+    color: $gray;
+}
+
+table {
+    width: 100%;
+    font-size: 12px;
+    &.responsive {
+        zoom: 1;
+        .table-head {
+            display: none;
+        }
+        @media only screen and (max-width: 768px) {
+            & {
+                border: none;
+            }
+            thead,
+            th {
+                display: none;
+            }
+            tr {
+                display: block;
+                &.spacer {
+                    display: none;
+                }
+                &:not(.heading-row) {
+                    &>td:first-child {
+                        display: block;
+                        position: relative;
+                        background-color: #f7f7f7;
+                        &:before {
+                            content: '';
+                            position: absolute;
+                            left: 4px;
+                            top: 7px;
+                            width: 15px;
+                            height: 15px;
+                            background-image: url("../img/arr-l.png");
+                            background-repeat: no-repeat;
+                            background-position: 5px center;
+                        }
+                        .table-head {
+                            display: none;
+                        }
+                    }
+                }
+                &.heading-row {
+                    border: none;
+                    .table-head {
+                        display: none;
+                    }
+                    td {
+                        display: block;
+                        border: none;
+                    }
+                }
+            }
+            td {
+                display: none;
+                padding-left: 25px;
+                border-bottom: 1px solid $gray-lighter;
+                &.block {
+                    display: block;
+                }
+            }
+            .table-head {
+                font-size: 12px;
+                display: inline-block;
+                width: 50%;
+                margin-bottom: 0.5em;
+            }
+        }
+    }
+}
+
+th {
+    text-align: left;
+}
+
+td,
+th {
+    padding: 5px 0;
+}
+
+tr.spacer {
+    td {
+        padding: 8px;
+    }
+    @media only screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+thead {
+    margin-bottom: 30px;
+    border-style: solid;
+    border-color: $dark;
+    border-width: 0;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+}
+
+td:first-child {
+    text-transform: uppercase;
+}
+
+.heading-row {
+    margin-top: 20px;
+    border-bottom: 1px solid $dark;
+}
+
+@import "media" // Всегда в конце
